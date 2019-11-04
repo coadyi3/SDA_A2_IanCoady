@@ -1,7 +1,3 @@
 <resources>
     <string name="app_name">SDA Assign02 – 2019 IanCoady</string>
-    <string name="open_camera">Implicit Intent: Open Camera</string>
-    <string name="view_picture">Implicit Intent: View Picture</string>
-    <string name="call_activity">Explicit intent: Call an activity</string>
-    <string name="button_string">Send</string>
 </resources>
