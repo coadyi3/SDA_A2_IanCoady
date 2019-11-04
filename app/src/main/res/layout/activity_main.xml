@@ -7,6 +7,19 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/emailDetails"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#E91E63"
+        android:paddingLeft="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/openActivityIntent" />
+
+    <TextView
         android:id="@+id/openCameraIntent"
         android:layout_width="0dp"
         android:layout_height="100dp"
@@ -71,24 +84,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/openPictureIntent" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="330dp"
-        android:background="#E91E63"
-        android:gravity="fill_horizontal"
-        android:paddingLeft="15dp"
-        android:textSize="18sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/openActivityIntent" />
-
     <Button
         android:id="@+id/sendButton"
         style="@android:style/Widget.Button"
@@ -98,7 +93,8 @@
         android:layout_marginEnd="16dp"
         android:backgroundTint="#03A9F4"
         android:text="@string/button_string"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/emailDetails" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
