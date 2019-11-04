@@ -7,32 +7,37 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/openCamera"
+        android:id="@+id/openCameraIntent"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="#F44336"
+        android:clickable="true"
+        android:focusable="true"
         android:gravity="center_vertical"
         android:paddingLeft="15dp"
         android:text="@string/open_camera"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:onClick="openCamera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/openPicture"
+        android:id="@+id/openPictureIntent"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="#9C27B0"
+        android:clickable="true"
+        android:focusable="true"
         android:gravity="center_vertical"
         android:paddingLeft="15dp"
         android:text="@string/view_picture"
@@ -42,16 +47,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/openCamera" />
+        app:layout_constraintTop_toBottomOf="@+id/openCameraIntent" />
 
     <TextView
-        android:id="@+id/openActivity"
+        android:id="@+id/openActivityIntent"
         android:layout_width="0dp"
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="#8BC34A"
+        android:clickable="true"
+        android:focusable="true"
         android:gravity="center_vertical"
         android:paddingLeft="15dp"
         android:text="@string/call_activity"
@@ -61,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/openPicture" />
+        app:layout_constraintTop_toBottomOf="@+id/openPictureIntent" />
 
     <TextView
         android:id="@+id/textView"
@@ -79,7 +86,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/openActivity" />
+        app:layout_constraintTop_toBottomOf="@+id/openActivityIntent" />
 
     <Button
         android:id="@+id/sendButton"
