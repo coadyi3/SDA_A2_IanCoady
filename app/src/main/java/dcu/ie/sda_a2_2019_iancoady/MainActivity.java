@@ -26,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         if(details == null){
-            Log.i(TAG, "No details to print");
+            Log.i(TAG, "No details to print"); //Log msg to confirm email details is empty
         }
         else {
             String email = details.getString("Email", "ian.coady3@mail.dcu.ie");
-            String subject = details.getString("Subject", "SDA Email");
+            String subject = details.getString("Subject", "SDA Email");             //set the values in the bundle to strings
             String content = details.getString("Content", "Hello World");
 
             Log.i(TAG, email); //Log msg to ensure the values we're being passed from the other activity correctly
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             emailDetails.setText(String.format("%s\n%s\n%s", email, subject, content));
             //tv.setText("hello World"); Sample setText I was using to test my code as the text view entered above would not update at first.
 
-            Log.i(TAG, emailDetails.getText().toString());
+            Log.i(TAG, emailDetails.getText().toString()); // Log msg to see the format in which the set text method printed the email details.
         }
 
         TextView callExplicitButton = findViewById(R.id.openActivityIntent);
@@ -47,24 +47,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             //Demonstrating the use of onClickListener as opposed to XML onClick
             public void onClick(View v) {
-                Intent openExplicit = new Intent(getApplicationContext(),ExplicitIntent.class);
+                Intent openExplicit = new Intent(getApplicationContext(),ExplicitIntent.class); //onclicklisneter to start the explicit activity.
                 startActivity(openExplicit);
             }
         });
 
         Button sendButton = findViewById(R.id.sendButton);
 
-        if(emailDetails.getText().toString().length() == 0){
-            sendButton.setEnabled(false);
-        }
-
-        else    sendButton.setEnabled(true);
+        if(emailDetails.getText().toString().length() == 0) sendButton.setEnabled(false);//if else to determine whether the button should be active or not
+        else                                                sendButton.setEnabled(true);
 
 
         sendButton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //onClickLiatnerer to start the email client but only if there is details entered in the text view
                 if(details == null){
                     Log.i(TAG, "No details to print");
                 }
