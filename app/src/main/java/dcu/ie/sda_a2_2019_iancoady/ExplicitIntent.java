@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ExplicitIntent extends AppCompatActivity {
 
@@ -30,14 +31,32 @@ public class ExplicitIntent extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //Ref: https://www.javatpoint.com/android-explicit-intent-example
-                Intent returnToMain = new Intent(getApplicationContext(), MainActivity.class);
-                returnToMain.putExtra("Email", email.getText().toString());
-                returnToMain.putExtra("Subject", subject.getText().toString());
-                returnToMain.putExtra("Content", content.getText().toString());
+                String emailText = email.getText().toString();
 
-                startActivity(returnToMain);
+                if (isEmailValid(emailText)){
+                    //Ref: https://www.javatpoint.com/android-explicit-intent-example
+                    Intent returnToMain = new Intent(getApplicationContext(), MainActivity.class);
+                    returnToMain.putExtra("Email", emailText);
+                    returnToMain.putExtra("Subject", subject.getText().toString());
+                    returnToMain.putExtra("Content", content.getText().toString());
+
+                    startActivity(returnToMain);
+                }
+
+                else{
+                    Toast.makeText(getApplicationContext(),"Invalid email, try again!",Toast.LENGTH_SHORT).show();
+                    email.setText("To: ");
+                    subject.setText("Subject: ");
+                    content.setText("Content: ");
+                }
+
+
             }
         });
+    }
+
+    public boolean isEmailValid(CharSequence email) {
+        //Ref: https://stackoverflow.com/questions/9355899/android-email-edittext-validation
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 }
