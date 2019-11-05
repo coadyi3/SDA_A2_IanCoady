@@ -4,9 +4,9 @@
     <string name="view_picture">Implicit Intent: View Picture</string>
     <string name="call_activity">Explicit intent: Call an activity</string>
     <string name="button_string">Send</string>
-    <string name="email_text">To:</string>
-    <string name="email_subject">Subject:</string>
-    <string name="email_content">Content:</string>
     <string name="save_button">Save</string>
     <string name="email_detail" />
+    <string name="default_email_text">To:</string>
+    <string name="default_subject_text">Subject:</string>
+    <string name="default_content_text">Content:</string>
 </resources>

@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         final Bundle details = getIntent().getExtras();
         TextView emailDetails = (TextView)findViewById(R.id.emailDetails);
-        TextView tv = (TextView)findViewById(R.id.textView) ;
+
 
         if(details == null){
             Log.i(TAG, "No details to print");
@@ -53,6 +53,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Button sendButton = findViewById(R.id.sendButton);
+
+        if(emailDetails.getText().toString().length() == 0){
+            sendButton.setEnabled(false);
+        }
+
+        else    sendButton.setEnabled(true);
+
+
         sendButton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -22,10 +22,10 @@ public class ExplicitIntent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.explicit_intent);
 
-        saveButton = (Button)findViewById(R.id.saveButton);
-        email = (EditText)findViewById(R.id.emailEditTest);
-        subject = (EditText)findViewById(R.id.subjectEditText);
-        content = (EditText) findViewById(R.id.composeMSg);
+        saveButton =    (Button)findViewById(R.id.saveButton);
+        email =         (EditText)findViewById(R.id.emailEditTest);
+        subject =       (EditText)findViewById(R.id.subjectEditText);
+        content =       (EditText)findViewById(R.id.composeMSg);
 
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,14 +40,15 @@ public class ExplicitIntent extends AppCompatActivity {
                     returnToMain.putExtra("Subject", subject.getText().toString());
                     returnToMain.putExtra("Content", content.getText().toString());
 
+
                     startActivity(returnToMain);
                 }
 
                 else{
                     Toast.makeText(getApplicationContext(),"Invalid email, try again!",Toast.LENGTH_SHORT).show();
-                    email.setText("To: ");
-                    subject.setText("Subject: ");
-                    content.setText("Content: ");
+                    email.      setText(R.string.default_email_text);
+                    subject.    setText(R.string.default_subject_text);
+                    content.    setText(R.string.default_content_text);
                 }
 
 
