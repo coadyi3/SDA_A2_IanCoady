@@ -12,38 +12,38 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String TAG = "MainActivity";
-    static final    int         REQUEST_IMAGE_CAPTURE = 1;
-    private         TextView    callExplicitButton;
-    private TextView emailDetails;
-    private Button sendButton;
+    private static final    String      TAG = "MainActivity";
+    static final            int         REQUEST_IMAGE_CAPTURE = 1;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        emailDetails = findViewById(R.id.emailDetails);
-        setContentView(R.layout.activity_main);
         final Bundle details = getIntent().getExtras();
+        TextView emailDetails = (TextView)findViewById(R.id.emailDetails);
+        TextView tv = (TextView)findViewById(R.id.textView) ;
+
         if(details == null){
             Log.i(TAG, "No details to print");
         }
         else {
             String email = details.getString("Email", "ian.coady3@mail.dcu.ie");
+            String subject = details.getString("Subject", "SDA Email");
+            String content = details.getString("Content", "Hello World");
 
             Log.i(TAG, email); //Log msg to ensure the values we're being passed from the other activity correctly
 
-            String subject = details.getString("Subject", "SDA Email");
-            String content = details.getString("Content", "Hello World");
-            String textView = String.format("%s\n%s\n%s", email, subject, content);
-            emailDetails.append(textView);
+
+            emailDetails.setText(String.format("%s\n%s\n%s", email, subject, content));
+            //tv.setText("hello World"); Sample setText I was using to test my code as the text view entered above would not update at first.
+
             Log.i(TAG, emailDetails.getText().toString());
         }
 
-        callExplicitButton = findViewById(R.id.openActivityIntent);
-        callExplicitButton    .setOnClickListener(new View.OnClickListener() {
+        TextView callExplicitButton = findViewById(R.id.openActivityIntent);
+        callExplicitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             //Demonstrating the use of onClickListener as opposed to XML onClick
             public void onClick(View v) {
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        sendButton = findViewById(R.id.sendButton);
+        Button sendButton = findViewById(R.id.sendButton);
         sendButton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,11 +68,9 @@ public class MainActivity extends AppCompatActivity {
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
                 }
-
             }
         }));
     }
-
 
     public void openCamera(View view) {
 

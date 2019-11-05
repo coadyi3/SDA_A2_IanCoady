@@ -8,4 +8,5 @@
     <string name="email_subject">Subject:</string>
     <string name="email_content">Content:</string>
     <string name="save_button">Save</string>
+    <string name="email_detail" />
 </resources>

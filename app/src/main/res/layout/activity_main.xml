@@ -7,19 +7,6 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/emailDetails"
-        android:layout_width="0dp"
-        android:layout_height="250dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="#E91E63"
-        android:paddingLeft="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/openActivityIntent" />
-
-    <TextView
         android:id="@+id/openCameraIntent"
         android:layout_width="0dp"
         android:layout_height="100dp"
@@ -84,6 +71,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/openPictureIntent" />
 
+    <TextView
+        android:id="@+id/emailDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#FFEB3B"
+        android:text="@string/email_detail"
+        android:textColor="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/openActivityIntent"/>
+
     <Button
         android:id="@+id/sendButton"
         style="@android:style/Widget.Button"
@@ -92,9 +93,19 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#03A9F4"
+        android:enabled="true"
         android:text="@string/button_string"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailDetails" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="185dp"
+        android:layout_height="117dp"
+        android:layout_marginTop="480dp"
+        android:text="TextView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="56dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
